@@ -1,0 +1,146 @@
+DROP TABLE borrowrec;
+
+CREATE TABLE borrowrec (
+  borrowRecNumber number(10) Primary key,
+  itemCallNumber varchar2(20),
+  staffIDBorrow varchar2(10),
+  staffIDReturn varchar2(10),
+  borrowerID varchar2(10),
+  borrowerEmail varchar2(50),
+  borrowDate varchar2(20),
+  dueDate varchar2(20),
+  returnDate varchar2(20),
+  borrowStatus varchar2(10)
+);
+
+INSERT INTO borrowrec (borrowRecNumber, itemCallNumber, staffIDBorrow, staffIDReturn, borrowerID, borrowerEmail, borrowDate, dueDate, returnDate, borrowStatus) VALUES(1, 'C209-B001-1', '123', '23423jk', 'Book', 'sdf@yahoo.com', '12-jan-05', '3-mar-04', '19-jun-03', 'borrowed');
+INSERT INTO borrowrec (borrowRecNumber, itemCallNumber, staffIDBorrow, staffIDReturn, borrowerID, borrowerEmail, borrowDate, dueDate, returnDate, borrowStatus) VALUES(2, 'C209-B001-1', '123', '23423jk', 'Book', 'sdf@yahoo.com', '12-jan-05', '12-oct-02', '19-jun-03', 'borrow');
+INSERT INTO borrowrec (borrowRecNumber, itemCallNumber, staffIDBorrow, staffIDReturn, borrowerID, borrowerEmail, borrowDate, dueDate, returnDate, borrowStatus) VALUES(3, 'C209-B001-1', '123', '23423jk', 'Gai3', 'sdf@yahoo.com', '12-jan-05', '08-nov-04', '19-jun-03', 'overdue');
+INSERT INTO borrowrec (borrowRecNumber, itemCallNumber, staffIDBorrow, staffIDReturn, borrowerID, borrowerEmail, borrowDate, dueDate, returnDate, borrowStatus) VALUES(4, 'C20-B002-1', '123', '23423jk', 'Radha', 'sdf@yahoo.com', '12-jan-05', '09-jun-03', '19-jun-03', 'overdue');
+INSERT INTO borrowrec VALUES (4, 'C20-B002-1', '123', '23423jk', 'Radha', 'sdf@yahoo.com', '12-jan-05', '09-jun-03', '19-jun-03', 'return');
+INSERT INTO borrowrec VALUES (5, 'C20-B003-1', '123', '23423jk', 'Raja', 'sdf@yahoo.com', '12-jan-05', '09-jun-03', '19-jun-03', 'borrow');
+
+DROP TABLE libraryitem;
+
+CREATE TABLE libraryitem (
+  itemRecNumber number(11) ,
+  itemCallNumber varchar(20) ,
+  itemCategory varchar(40),
+  itemSubject varchar(40),
+  itemMediaType varchar(25),
+  itemLanguage varchar(25),
+  itemTitle varchar(150) ,
+  itemBriefDesc varchar(200),
+  itemAuthor varchar(200),
+  itemKeyword varchar(100),
+  itemPublisherName varchar(30),
+  itemISBN varchar(15) ,
+  itemLength varchar(6),
+  itemYear varchar(4),
+  itemTotQuantity number(3),
+  itemTotReserve number(3),
+  itemTotAvailable number(3),
+  itemTotBorrow number(3)
+);
+
+
+INSERT INTO libraryitem (itemRecNumber, itemCallNumber, itemCategory, itemSubject, itemMediaType, itemLanguage, itemTitle, itemBriefDesc, itemAuthor, itemKeyword, itemPublisherName, itemISBN, itemLength, itemYear, itemTotQuantity, itemTotReserve, itemTotAvailable, itemTotBorrow) VALUES (1, 'C209-B001-1', 'Computing', 'Web Development', 'Book', 'English', 'Professional JSP', 'JSP development book', 'Karl Avedal, Danny Ayers, Timothy Briggs', 'JSP, Servlet, Java, Web, Programming', 'Wrox', '1861003625', '600', '2000', 2, 0, 2, 0);
+INSERT INTO libraryitem (itemRecNumber, itemCallNumber, itemCategory, itemSubject, itemMediaType, itemLanguage, itemTitle, itemBriefDesc, itemAuthor, itemKeyword, itemPublisherName, itemISBN, itemLength, itemYear, itemTotQuantity, itemTotReserve, itemTotAvailable, itemTotBorrow) VALUES (2, 'B101-B001-9', 'Business', 'CRM', 'Book', 'English', 'CRM at the Speed of Light: Capturing and Keeping Customers in Internet Real Time', 'A book about Customer Relationship Management', 'Paul Greenberg', 'CRM, Business, Internet', 'McGraw-Hill', '0072127821', '600', '2001', 2, 0, 2, 0);
+INSERT INTO libraryitem (itemRecNumber, itemCallNumber, itemCategory, itemSubject, itemMediaType, itemLanguage, itemTitle, itemBriefDesc, itemAuthor, itemKeyword, itemPublisherName, itemISBN, itemLength, itemYear, itemTotQuantity, itemTotReserve, itemTotAvailable, itemTotBorrow) VALUES (3, 'B101-B001-11', 'Business', 'CRM', 'Book', 'English', 'E-loyalty: How to keep customer coming back to your web site', 'About Customer Loyalty', 'Ellen Reid Smith', 'Loyalty, CRM', 'Harperbusiness', '0066620708', '600', '2000', 2, 0, 2, 0);
+INSERT INTO libraryitem (itemRecNumber, itemCallNumber, itemCategory, itemSubject, itemMediaType, itemLanguage, itemTitle, itemBriefDesc, itemAuthor, itemKeyword, itemPublisherName, itemISBN, itemLength, itemYear, itemTotQuantity, itemTotReserve, itemTotAvailable, itemTotBorrow) VALUES (4, 'C203-B001-15', 'Computing', 'Computer Graphics', 'Book', 'Chinese', 'Photoshop character art 100 example', 'Teach U how to create 100 type of art type character using photoshop', 'Than Sia Lin', 'photoshop', 'people electronic mailing', '7115071039', '230', '1998', 2, 0, 2, 0);
+INSERT INTO libraryitem (itemRecNumber, itemCallNumber, itemCategory, itemSubject, itemMediaType, itemLanguage, itemTitle, itemBriefDesc, itemAuthor, itemKeyword, itemPublisherName, itemISBN, itemLength, itemYear, itemTotQuantity, itemTotReserve, itemTotAvailable, itemTotBorrow) VALUES (5, 'B106-B001-16', 'Business', 'Information Systems', 'Book', 'English', 'The Road Ahead', 'A vision from bill gate', 'Bill Gate', 'Microsoft, bill gate, IT', 'Viking', '0670772895', '282', '1995', 2, 0, 2, 0);
+INSERT INTO libraryitem (itemRecNumber, itemCallNumber, itemCategory, itemSubject, itemMediaType, itemLanguage, itemTitle, itemBriefDesc, itemAuthor, itemKeyword, itemPublisherName, itemISBN, itemLength, itemYear, itemTotQuantity, itemTotReserve, itemTotAvailable, itemTotBorrow) VALUES (6, 'B106-B001-17', 'Business', 'Information Systems', 'Book', 'English', 'The Skin of Culture: Investigating the new electronic reality', 'Description of the future life and culture in digital age', 'De Kerckhove', 'Future, culture, electronic', 'somerville', '1895897459', '223', '1995', 1, 0, 1, 0);
+INSERT INTO libraryitem (itemRecNumber, itemCallNumber, itemCategory, itemSubject, itemMediaType, itemLanguage, itemTitle, itemBriefDesc, itemAuthor, itemKeyword, itemPublisherName, itemISBN, itemLength, itemYear, itemTotQuantity, itemTotReserve, itemTotAvailable, itemTotBorrow) VALUES (7, 'A103-B001-18', 'Arts', 'English Literature', 'Book', 'English', 'Harry Potter and the goblet of fire', 'The 3th book for Harry Potter', 'J.K.Rowling', 'Harry Potter, Magic', 'Bloomsbury', '0747550999', '636', '2001', 1, 0, 1, 0);
+INSERT INTO libraryitem (itemRecNumber, itemCallNumber, itemCategory, itemSubject, itemMediaType, itemLanguage, itemTitle, itemBriefDesc, itemAuthor, itemKeyword, itemPublisherName, itemISBN, itemLength, itemYear, itemTotQuantity, itemTotReserve, itemTotAvailable, itemTotBorrow) VALUES (8, 'C208-B001-19', 'Computing', 'Telecommunication', 'Book', 'English', 'Business Data Communications', 'Telecommunication usages in business', 'William Stallings, Richard Van Slyke', 'Business, Communication, Telecommunication', 'Prentice Hall', '0133484831', '630', '1990', 1, 0, 1, 0);
+INSERT INTO libraryitem (itemRecNumber, itemCallNumber, itemCategory, itemSubject, itemMediaType, itemLanguage, itemTitle, itemBriefDesc, itemAuthor, itemKeyword, itemPublisherName, itemISBN, itemLength, itemYear, itemTotQuantity, itemTotReserve, itemTotAvailable, itemTotBorrow) VALUES (9, 'C209-B001-20', 'Computing', 'Web Development', 'Book', 'Chinese', 'Web scripting secret weapons', 'About CGI and JavaScript use in web development.  A translate in Chiense Edition', 'Scott Walter', 'Web, Scripting, CGI, JavaScript', 'QUE', '0789709473', '300', '1996', 1, 0, 1, 0);
+INSERT INTO libraryitem (itemRecNumber, itemCallNumber, itemCategory, itemSubject, itemMediaType, itemLanguage, itemTitle, itemBriefDesc, itemAuthor, itemKeyword, itemPublisherName, itemISBN, itemLength, itemYear, itemTotQuantity, itemTotReserve, itemTotAvailable, itemTotBorrow) VALUES (10, 'C20-B002-1', 'Computing', 'Web Development', 'Book', 'Chinese', 'Web scripting secret weapons', 'About CGI and JavaScript use in web development.  A translate in Chiense Edition', 'Scott Walter', 'Web, Scripting, CGI, JavaScript', 'QUE', '0789709473', '300', '1996', 1, 0, 1, 0);
+INSERT INTO libraryitem VALUES (11, 'C210-B003-4', 'Computing', 'Web Development', 'Book', 'Chinese', 'Web scripting secret weapons1', 'About CGI and JavaScript use in web development1.  A translate in Chiense Edition1', 'Scott Walter', 'Web, Scripting, CGI, JavaScript', 'QUE', '0789709475', '300', '1996', 1, 1, 1, 0);
+
+SELECT * FROM libraryitem;
+
+
+DROP TABLE penaltyrec;
+
+CREATE TABLE penaltyrec (
+  penaltyRecNumber number(10) Primary key,
+  borrowRecNumber number(10),
+  borrowerID varchar(10),
+  overdueDay number(10),
+  penaltyAmount number(10,2)
+);
+
+
+
+
+insert into penaltyrec values (1, 12345, 'gai3', '02-jan-2005', 500);
+
+
+
+
+DROP TABLE reserverec;
+
+CREATE TABLE reserverec (
+  reserveRecNumber number(10) primary key,
+  itemCallNumber varchar(20),
+  reserverID varchar(10),
+  reserverEmail varchar(50),
+  reserveDate date,
+  reserveCancelDate date,
+  reserveInformDate date,
+  reserveStatus varchar(10)
+);
+
+
+DROP TABLE libuser;
+
+CREATE TABLE libuser (
+userRecNumber   number(10),
+  userID varchar(10) primary key,
+  userPassword varchar(20),
+  userType varchar(10),
+  userFirstName varchar(20),
+  userLastName varchar(20),
+  userGender varchar(6),
+  userEmail varchar(50),
+  userICNumber varchar(15),
+  userAddress1 varchar(30),
+  userAddress2 varchar(30),
+  userCity varchar(15),
+  userState varchar(15),
+  userPostCode varchar(7),
+  userCountry varchar(35),
+  userOccupation varchar(30),
+  userContactNumber varchar(15),
+  userTotQuota number(2),
+  userQuotaAvailable number(2),
+  userTotReservation number(2),
+  userReserveAvailable number(2)
+);
+
+
+INSERT INTO libuser (userRecNumber, userID, userPassword, userType, userFirstName, userLastName, userGender, userEmail, userICNumber, userAddress1, userAddress2, userCity, userState, userPostCode, userCountry, userOccupation, userContactNumber, userTotQuota, userQuotaAvailable, userTotReservation, userReserveAvailable) VALUES (2, 'songjing', '4b734735067e9b7b', 'admin', 'Song Jing', 'Lim', 'Male', 'limsongjing@geocities.com', '123456', '17, Jln Tawas Baru 17B,', 'Taman Ehsan', 'Ipoh', 'Perak', '30010', 'Malaysia [MY]', 'Student', '605-2915608', 20, 20, 3, 3);
+INSERT INTO libuser (userRecNumber, userID, userPassword, userType, userFirstName, userLastName, userGender, userEmail, userICNumber, userAddress1, userAddress2, userCity, userState, userPostCode, userCountry, userOccupation, userContactNumber, userTotQuota, userQuotaAvailable, userTotReservation, userReserveAvailable) VALUES (4, 'guest', '57510426775c5b0f', 'borrower', 'guest', 'guest', 'Male', 'user@domain.com', '12345', 'Unknown Address', '-', 'Unknown City', 'Unknown State', '12345', 'Malaysia [MY]', 'IT', 'call-me-12345', 10, 10, 3, 3);
+INSERT INTO libuser (userRecNumber, userID, userPassword, userType, userFirstName, userLastName, userGender, userEmail, userICNumber, userAddress1, userAddress2, userCity, userState, userPostCode, userCountry, userOccupation, userContactNumber, userTotQuota, userQuotaAvailable, userTotReservation, userReserveAvailable) VALUES (5, 'jinli', '4263fc0c36a42ecb', 'admin', 'Jinli', 'Cao', 'Female', 'cao@usq.edu.au', '', 'USQ Faculty of Science', '', 'Toowoomba', 'Queensland', '4350', 'Australia [AU]', 'Lecturer', '', 20, 20, 3, 3);
+INSERT INTO libuser (userRecNumber, userID, userPassword, userType, userFirstName, userLastName, userGender, userEmail, userICNumber, userAddress1, userAddress2, userCity, userState, userPostCode, userCountry, userOccupation, userContactNumber, userTotQuota, userQuotaAvailable, userTotReservation, userReserveAvailable) VALUES (6, 'billgate', '74a283123fa0dd53', 'librarian', 'Bill', 'Gate', 'Male', 'billgate@microsoft.com', 'US Citizen A1', 'Microsoft', 'Headquarter', 'Seeater', 'Washington', '12345', 'United States of America [US]', 'CEO', 'call-bill-ms', 15, 15, 3, 3);
+INSERT INTO libuser (userRecNumber, userID, userPassword, userType, userFirstName, userLastName, userGender, userEmail, userICNumber, userAddress1, userAddress2, userCity, userState, userPostCode, userCountry, userOccupation, userContactNumber, userTotQuota, userQuotaAvailable, userTotReservation, userReserveAvailable) VALUES (22, 'candy', '2cc78855716b0a55', 'admin', 'Leuny', 'Candy', 'Female', 'candy@usq.edu.au', '', 'HK', '', 'HK', 'HK', '12345', 'Hong Kong [HK]', 'IT', '', 20, 20, 3, 3);
+INSERT INTO libuser (userRecNumber, userID, userPassword, userType, userFirstName, userLastName, userGender, userEmail, userICNumber, userAddress1, userAddress2, userCity, userState, userPostCode, userCountry, userOccupation, userContactNumber, userTotQuota, userQuotaAvailable, userTotReservation, userReserveAvailable) VALUES (1, 'gai3', 'gai3', 'admin', 'Gai3', 'Gai3', 'Female', 'candy@usq.edu.au', '', 'HK', '', 'HK', 'HK', '12345', 'Hong Kong [HK]', 'IT', '', 20, 20, 3, 3);
+
+
+create table admin_inbox(
+mid number primary key,
+user_name varchar2(30),
+msg_from varchar2(50),
+msg_subject varchar2(50),
+msg_data varchar2(1000),
+msg_date date);
+
+
+create table user_inbox(
+mid number primary key,
+user_name varchar2(30),
+msg_from varchar2(50),
+msg_subject varchar2(50),
+msg_data varchar2(500),
+msg_date date);
+
+
